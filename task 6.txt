@@ -1,0 +1,104 @@
+
+//3
+
+
+  class Person {
+    constructor(name, age, gender) {
+      this.name = name;
+      this.age = age;
+      this.gender = gender;
+    }
+  
+    
+    displayDetails() {
+      console.log(`Name: ${this.name}, Age: ${this.age}, Gender: ${this.gender}`);
+    }
+  }
+  
+
+  const person1 = new Person('subash', 19, 'male');
+  person1.displayDetails();
+  
+  //4
+
+  class UberPriceCalculator {
+    constructor(baseFare, costPerMile, bookingFee) {
+      this.baseFare = baseFare;
+      this.costPerMile = costPerMile;
+      this.bookingFee = bookingFee;
+    }
+  
+    calculatePrice(distance) {
+      return this.baseFare + (this.costPerMile * distance) + this.bookingFee;
+    }
+  }
+  
+  
+  const calculator = new UberPriceCalculator(2.5, 1.5, 1.0);
+  const distance = 10; // in miles
+  const price = calculator.calculatePrice(distance);
+  console.log(`The estimated price for a ${distance}-mile trip is $${price}`);
+  
+
+
+//1
+  class Movie {
+    constructor(title, studio, rating = 'PG') {
+      this.title = title;
+      this.studio = studio;
+      this.rating = rating;
+    }
+  
+    getPG() {
+      return this.rating === 'PG';
+    }
+  }
+  
+  const movie1 = new Movie('Casino Royale', 'Eon Productions', 'PG-13');
+  const movie2 = new Movie('Finding Nemo', 'Pixar', 'G');
+  const movie3 = new Movie('Avatar', '20th Century Fox');
+  
+  console.log(movie1);
+  console.log(movie2);
+  console.log(movie3);
+  
+  console.log(movie1.getPG()); 
+  console.log(movie2.getPG());
+  console.log(movie3.getPG()); 
+  
+
+
+//2
+
+  class Circle {
+    constructor(radius) {
+      this.radius = radius;
+    }
+  
+    static createCircle(diameter) {
+      return new Circle(diameter / 2);
+    }
+  
+    getRadius() {
+      return this.radius;
+    }
+  
+    getDiameter() {
+      return this.radius * 2;
+    }
+  
+    getArea() {
+      return Math.PI * this.radius * this.radius;
+    }
+  
+    getCircumference() {
+      return 2 * Math.PI * this.radius;
+    }
+  }
+  
+  const circle = Circle.createCircle(10);
+  console.log(`Radius: ${circle.getRadius()}`);
+  console.log(`Diameter: ${circle.getDiameter()}`);
+  console.log(`Area: ${circle.getArea().toFixed(2)}`);
+  console.log(`Circumference: ${circle.getCircumference().toFixed(2)}`);
+  
